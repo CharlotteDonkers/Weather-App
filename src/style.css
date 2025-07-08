@@ -74,8 +74,8 @@ main {
 }
 
 #emoji {
-  width: 88px;
-  height: 88px;
+  width: 100px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,8 +83,8 @@ main {
 }
 
 #emoji img {
-  width: 88px !important;
-  height: 88px !important;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   display: block;
 }
