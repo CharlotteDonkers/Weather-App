@@ -72,12 +72,11 @@ main {
   color: #f65282;
 }
 
-#emoji {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100px;
-  margin-bottom: 10px;
+.weather-app-icon {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  display: block;
 }
 
 .weather-temperature {
