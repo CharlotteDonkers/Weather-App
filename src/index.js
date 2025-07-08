@@ -1,5 +1,3 @@
-let apiKey = "3ft268o097a3b3e1e35c0b084d6748a5";
-
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
@@ -22,16 +20,30 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
+
   let formattedDay = days[day];
   return `${formattedDay} ${hours}:${minutes}`;
 }
 
 function updateWeather(response) {
-  let cityElement = document.querySelector("#current-city");
-  let temperatureElement = document.querySelector(".current-temperature-value");
+  let cityElement = document.querySelector("#city");
+  let temperatureElement = document.querySelector("#temperature");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind-speed");
+  let timeElement = document.querySelector("#time");
+  let emojiElement = document.querySelector("#emoji");
 
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windElement.innerHTML = `${response.data.wind.speed}km/h`;
+
+  let date = new Date(response.data.time * 1000);
+  timeElement.innerHTML = formatDate(date);
+
+  emojiElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
 
 function search(event) {
@@ -39,13 +51,19 @@ function search(event) {
   let searchInputElement = document.querySelector("#search-input");
   let city = searchInputElement.value;
 
+  let apiKey = "3ft268o097a3b3e1e35c0b084d6748a5";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(updateWeather);
 }
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-let currentDateElement = document.querySelector("#current-date");
-let currentDate = new Date();
-currentDateElement.innerHTML = formatDate(currentDate);
+function loadDefaultCity() {
+  let apiKey = "3ft268o097a3b3e1e35c0b084d6748a5";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Paris&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(updateWeather);
+}
+
+loadDefaultCity();
