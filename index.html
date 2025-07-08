@@ -3,97 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-
-    <title>Charlotte's Weather App, week 7</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>My weather application</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
   </head>
-
   <body>
-    <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm3l5f-F7mH15N7PTUr9km208tt2h_U3MVKQ&s"
-      alt="shecodeslogo"
-    />
-    <br />
-
-    <form id="search-form">
-      <input
-        type="search"
-        placeholder="Enter a city..."
-        required
-        class="search-input"
-        id="search-input"
-      />
-      <input type="submit" value="Search" class="search-button" />
-    </form>
-
-    <div class="CurrentWeather">
-      <div class="Location">
-        <h1>Vancouver</h1>
-        <ul class="WeatherNow">
-          <li>Monday 13:05, overcast clouds</li>
-          <li>
-            Humidity: <strong>93%</strong>, Wind: <strong>3.58km/h</strong>
-          </li>
-        </ul>
-      </div>
-      <h2 class="Temperature">
-        <span class="material-symbols-outlined">rainy</span> 11°
-      </h2>
+    <div class="weather-app">
+      <header>
+        <form id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="search-input"
+            id="search-input"
+          />
+          <input type="submit" value="Search" class="search-button" />
+        </form>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1 class="current-city" id="current-city">Paris</h1>
+            <p class="current-details">
+              <span id="current-date"></span>, moderate rain <br />
+              Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
+            </p>
+          </div>
+          <div class="current-temperature">
+            <span class="current-temperature-icon">☀️</span
+            ><span class="current-temperature-value">24</span
+            ><span class="current-temperature-unit">°C</span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          This project was coded by
+          <a
+            href="https://www.linkedin.com/in/charlotte-donkers-aaa9231ba/?msgOverlay=true"
+            target="_blank"
+            >Charlotte Donkers</a
+          >
+          and is
+          <a href="https://github.com/CharlotteDonkers" target="_blank">
+            on GitHub</a
+          >
+          and
+          <a
+            href="https://app.netlify.com/teams/charlottedonkers/projects"
+            target="_blank"
+            >hosted on Netlify</a
+          >
+        </p>
+      </footer>
     </div>
-    <ul class="Forecast">
-      <li>
-        <span class="day-name">Monday</span> <br />
-        <span class="material-symbols-outlined"> rainy </span> <br />
-        <span class="temp"><strong>13°</strong> - 9°</span>
-      </li>
-      <li>
-        <span class="day-name">Tuesday</span> <br />
-        <span class="material-symbols-outlined"> rainy </span> <br />
-        <span class="temp"><strong>13°</strong> - 8°</span>
-      </li>
-      <li>
-        <span class="day-name">Wednesday</span> <br />
-        <span class="material-symbols-outlined"> partly_cloudy_day </span>
-        <br />
-        <span class="temp"><strong>14°</strong> - 7°</span>
-      </li>
-      <li>
-        <span class="day-name">Thursday</span> <br />
-        <span class="material-symbols-outlined"> partly_cloudy_day </span>
-        <br />
-        <span class="temp"><strong>15°</strong> - 9°</span>
-      </li>
-      <li>
-        <span class="day-name">Friday</span> <br />
-        <span class="material-symbols-outlined"> partly_cloudy_day </span>
-        <br />
-        <span class="temp"><strong>17°</strong> - 9°</span>
-      </li>
-    </ul>
-    <p></p>
-    <footer>
-      <p>
-        This project was coded by
-        <a
-          href="https://www.linkedin.com/in/charlotte-donkers-aaa9231ba/?msgOverlay=true"
-          target="_blank"
-          >Charlotte Donkers</a
-        >
-        and is
-        <a href="https://github.com/CharlotteDonkers" target="_blank">
-          on GitHub</a
-        >
-        and
-        <a
-          href="https://app.netlify.com/teams/charlottedonkers/projects"
-          target="_blank"
-          >hosted on Netlify</a
-        >
-      </p>
-    </footer>
   </body>
+  <script src="src/index.js"></script>
 </html>
