@@ -62,7 +62,7 @@ searchForm.addEventListener("submit", search);
 
 function loadDefaultCity() {
   let apiKey = "3ft268o097a3b3e1e35c0b084d6748a5";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Paris&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Dublin&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(updateWeather);
 }
 
