@@ -3,7 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Charlotte's Weather App, week 7</title>
   </head>
-  <body></body>
+  <body>
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm3l5f-F7mH15N7PTUr9km208tt2h_U3MVKQ&s"
+      alt="shecodeslogo"
+    />
+    <br />
+
+    <form>
+      <input class="form-control" type="search" placeholder="Enter a city..." />
+      <input
+        class="submit-button"
+        type="submit"
+        value="Search"
+        class="“button“"
+      />
+    </form>
+
+    <div class="CurrentWeather">
+      <div class="Location">
+        <h1>Vancouver</h1>
+        <ul class="WeatherNow">
+          <li>Monday 13:05, overcast clouds</li>
+          <li>
+            Humidity: <strong>93%</strong>, Wind: <strong>3.58km/h</strong>
+          </li>
+        </ul>
+      </div>
+      <h2 class="Temperature">
+        <span class="material-symbols-outlined">rainy</span> 11°
+      </h2>
+    </div>
+    <ul class="Forecast">
+      <li>
+        <span class="day-name">Monday</span> <br />
+        <span class="material-symbols-outlined"> rainy </span> <br />
+        <span class="temp"><strong>13°</strong> - 9°</span>
+      </li>
+      <li>
+        <span class="day-name">Tuesday</span> <br />
+        <span class="material-symbols-outlined"> rainy </span> <br />
+        <span class="temp"><strong>13°</strong> - 8°</span>
+      </li>
+      <li>
+        <span class="day-name">Wednesday</span> <br />
+        <span class="material-symbols-outlined"> partly_cloudy_day </span>
+        <br />
+        <span class="temp"><strong>14°</strong> - 7°</span>
+      </li>
+      <li>
+        <span class="day-name">Thursday</span> <br />
+        <span class="material-symbols-outlined"> partly_cloudy_day </span>
+        <br />
+        <span class="temp"><strong>15°</strong> - 9°</span>
+      </li>
+      <li>
+        <span class="day-name">Friday</span> <br />
+        <span class="material-symbols-outlined"> partly_cloudy_day </span>
+        <br />
+        <span class="temp"><strong>17°</strong> - 9°</span>
+      </li>
+    </ul>
+    <p></p>
+    <footer>
+      This project was coded by
+      <a
+        class="Link"
+        href="https://www.linkedin.com/in/charlotte-donkers-aaa9231ba/"
+      >
+        Charlotte Donkers</a
+      >
+    </footer>
+  </body>
 </html>
