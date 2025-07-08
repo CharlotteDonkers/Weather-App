@@ -72,13 +72,12 @@ main {
   color: #f65282;
 }
 
-.weather-app-icon {
-  font-size: 80px;
-  object-fit: contain;
-  display: block;
-  line-height: 1;
-  margin: 0 auto;
-  text-align: center;
+#emoji {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  margin-bottom: 10px;
 }
 
 .weather-temperature {
