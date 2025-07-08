@@ -73,11 +73,12 @@ main {
 }
 
 .weather-app-icon {
-  width: 64px;
-  height: 64px;
+  font-size: 80px;
   object-fit: contain;
   display: block;
+  line-height: 1;
   margin: 0 auto;
+  text-align: center;
 }
 
 .weather-temperature {
